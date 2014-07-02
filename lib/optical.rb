@@ -1,0 +1,3 @@
+module Optical
+  # Your code goes here...
+end
