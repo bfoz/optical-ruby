@@ -23,11 +23,19 @@ module Optical
 	    @clear_radius || (@clear_diameter && @clear_diameter/2)
 	end
 
+	# @!attribute [r] center_thickness
+	#   @return [Number]  the thickness of the {Lens} at its center
+	attr_reader :center_thickness
+
 	# @!attribute diameter
 	#   @return [Number]  the physical diameter of the {Lens}
 	def diameter
 	    @diameter || 2*@radius
 	end
+
+	# @!attribute [r] edge_thickness
+	#   @return [Number]  the thickness of the {Lens} at its edge
+	attr_accessor :edge_thickness
 
 	# @!attribute [r] numerical_aperture
 	#   @return [Number]  the numerical aperture of the lens, based on clear_radius (if set; otherwise it's based on radius)
@@ -39,6 +47,12 @@ module Optical
 	#   @return [Number]	the physical radius of the {Lens}
 	def radius
 	    @radius || @diameter/2
+	end
+
+	# @!attribute thickness
+	#   @return [Number]  the maximum thickness of the {Lens}
+	def thickness
+	    [@center_thickness, @edge_thickness].max
 	end
     end
 end
