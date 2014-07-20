@@ -1,6 +1,6 @@
 # Optical
 
-TODO: Write a gem description
+Remember that optics class you took in college? Me neither, and that's why I wrote this gem.
 
 ## Installation
 
@@ -18,12 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Lenses
 
-## Contributing
+The optical gem has primitives for modeling generic thin-lenses, as well as more specific lens types.
 
-1. Fork it ( https://github.com/[my-github-username]/optical/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+To model a simple thin lens, simply...
+
+```ruby
+lens = Optical::Lens.new diameter:12.mm, focal_length:20.mm
+```
+
+A Plano-Convex lens is just as easy to make...
+
+```ruby
+lens = Optical::Lens.new diameter:12.mm, focal_length:20.mm
+```
